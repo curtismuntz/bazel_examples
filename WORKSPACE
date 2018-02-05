@@ -26,18 +26,11 @@ load(
 
 container_repositories()
 
-# container_pull(
-#     name = "rpi_docker_base",
-#     registry = "index.docker.io",
-#     repository = "murtis/rpi2_debian_cpp",
-#     tag = "latest",
-# )
-
 container_pull(
     name = "rpi_docker_base",
     registry = "index.docker.io",
-    repository = "resin/raspberrypi2-alpine-python",
-    tag = "3.6",
+    repository = "murtis/raspberrypi2_docker_base",
+    tag = "latest",
 )
 
 container_pull(
