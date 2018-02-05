@@ -21,9 +21,9 @@ filegroup(
 filegroup(
     name = "srcs",
     srcs = glob(["**"]) + [
-        "//tools/arm_compiler/linaro_linux_gcc:srcs",
+        "//tools/arm_compiler/linaro_linux_gcc_5_3_1:srcs",
     ],
-    visibility = ["//src/test/shell/bazel/testdata/bazel_toolchain_test_data:__pkg__"],
+    visibility = ["//visibility:private"],
 )
 
 cc_toolchain_suite(
@@ -38,7 +38,7 @@ cc_toolchain_suite(
 filegroup(
     name = "linaro_linux_all_files",
     srcs = [
-        "//tools/arm_compiler/linaro_linux_gcc:tool-wrappers",
+        "//tools/arm_compiler/linaro_linux_gcc_5_3_1:tool-wrappers",
         "@org_linaro_components_toolchain_gcc_5_3_1//:compiler_pieces",
     ],
 )
@@ -46,9 +46,9 @@ filegroup(
 filegroup(
     name = "linaro_linux_linker_files",
     srcs = [
-        "//tools/arm_compiler/linaro_linux_gcc:ar",
-        "//tools/arm_compiler/linaro_linux_gcc:gcc",
-        "//tools/arm_compiler/linaro_linux_gcc:ld",
+        "//tools/arm_compiler/linaro_linux_gcc_5_3_1:ar",
+        "//tools/arm_compiler/linaro_linux_gcc_5_3_1:gcc",
+        "//tools/arm_compiler/linaro_linux_gcc_5_3_1:ld",
         "@org_linaro_components_toolchain_gcc_5_3_1//:compiler_pieces",
     ],
 )
@@ -56,9 +56,9 @@ filegroup(
 filegroup(
     name = "linaro_linux_compiler_files",
     srcs = [
-        "//tools/arm_compiler/linaro_linux_gcc:as",
-        "//tools/arm_compiler/linaro_linux_gcc:gcc",
-        "//tools/arm_compiler/linaro_linux_gcc:ld",
+        "//tools/arm_compiler/linaro_linux_gcc_5_3_1:as",
+        "//tools/arm_compiler/linaro_linux_gcc_5_3_1:gcc",
+        "//tools/arm_compiler/linaro_linux_gcc_5_3_1:ld",
     ],
 )
 
@@ -75,9 +75,9 @@ cc_toolchain(
     dwp_files = ":empty",
     dynamic_runtime_libs = [":empty"],
     linker_files = ":linaro_linux_linker_files",
-    objcopy_files = "//tools/arm_compiler/linaro_linux_gcc:objcopy",
+    objcopy_files = "//tools/arm_compiler/linaro_linux_gcc_5_3_1:objcopy",
     static_runtime_libs = [":empty"],
-    strip_files = "//tools/arm_compiler/linaro_linux_gcc:strip",
+    strip_files = "//tools/arm_compiler/linaro_linux_gcc_5_3_1:strip",
     supports_param_files = 1,
     visibility = ["//visibility:public"],
 )
@@ -94,4 +94,5 @@ cc_toolchain(
     static_runtime_libs = [":empty"],
     strip_files = ":empty",
     supports_param_files = 1,
+    visibility = ["//visibility:public"],
 )

@@ -2,11 +2,22 @@ major_version: "local"
 minor_version: ""
 default_target_cpu: "same_as_host"
 
+#####################
+# ARMeabi-v7a aliases
+#####################
 default_toolchain {
   cpu: "armeabi-v7a"
   toolchain_identifier: "clang_linux_armhf"
 }
 
+default_toolchain {
+  cpu: "rpi"
+  toolchain_identifier: "clang_linux_armhf"
+}
+
+########################
+# Local compiler aliases
+########################
 default_toolchain {
   cpu: "k8"
   toolchain_identifier: "local"
@@ -31,21 +42,21 @@ toolchain {
   target_system_name: "arm_a15"
   toolchain_identifier: "clang_linux_armhf"
 
-  tool_path { name: "ar" path: "linaro_linux_gcc/arm-linux-gnueabihf-ar" }
-  tool_path { name: "compat-ld" path: "linaro_linux_gcc/arm-linux-gnueabihf-ld" }
-  tool_path { name: "cpp" path: "linaro_linux_gcc/arm-linux-gnueabihf-gcc" }
-  tool_path { name: "dwp" path: "linaro_linux_gcc/arm-linux-gnueabihf-dwp" }
-  tool_path { name: "gcc" path: "linaro_linux_gcc/arm-linux-gnueabihf-gcc" }
+  tool_path { name: "ar" path: "linaro_linux_gcc_5_3_1/arm-linux-gnueabihf-ar" }
+  tool_path { name: "compat-ld" path: "linaro_linux_gcc_5_3_1/arm-linux-gnueabihf-ld" }
+  tool_path { name: "cpp" path: "linaro_linux_gcc_5_3_1/arm-linux-gnueabihf-gcc" }
+  tool_path { name: "dwp" path: "linaro_linux_gcc_5_3_1/arm-linux-gnueabihf-dwp" }
+  tool_path { name: "gcc" path: "linaro_linux_gcc_5_3_1/arm-linux-gnueabihf-gcc" }
   tool_path { name: "gcov" path: "arm-frc-linux-gnueabi/arm-frc-linux-gnueabi-gcov-4.9" }
   # C(++) compiles invoke the compiler (as that is the one knowing where
   # to find libraries), but we provide LD so other rules can invoke the linker.
-  tool_path { name: "ld" path: "linaro_linux_gcc/arm-linux-gnueabihf-ld" }
-  tool_path { name: "nm" path: "linaro_linux_gcc/arm-linux-gnueabihf-nm" }
-  tool_path { name: "objcopy" path: "linaro_linux_gcc/arm-linux-gnueabihf-objcopy" }
+  tool_path { name: "ld" path: "linaro_linux_gcc_5_3_1/arm-linux-gnueabihf-ld" }
+  tool_path { name: "nm" path: "linaro_linux_gcc_5_3_1/arm-linux-gnueabihf-nm" }
+  tool_path { name: "objcopy" path: "linaro_linux_gcc_5_3_1/arm-linux-gnueabihf-objcopy" }
   objcopy_embed_flag: "-I"
   objcopy_embed_flag: "binary"
-  tool_path { name: "objdump" path: "linaro_linux_gcc/arm-linux-gnueabihf-objdump" }
-  tool_path { name: "strip" path: "linaro_linux_gcc/arm-linux-gnueabihf-strip" }
+  tool_path { name: "objdump" path: "linaro_linux_gcc_5_3_1/arm-linux-gnueabihf-objdump" }
+  tool_path { name: "strip" path: "linaro_linux_gcc_5_3_1/arm-linux-gnueabihf-strip" }
 
   compiler_flag: "--sysroot=external/org_linaro_components_toolchain_gcc_5_3_1/arm-linux-gnueabihf/libc"
   compiler_flag: "-mfloat-abi=hard"
@@ -81,10 +92,10 @@ toolchain {
 
   linker_flag: "--sysroot=external/org_linaro_components_toolchain_gcc_5_3_1/arm-linux-gnueabihf/libc"
   linker_flag: "-lstdc++"
-  linker_flag: "-latomic"
+  #linker_flag: "-latomic"
   linker_flag: "-lm"
   linker_flag: "-lpthread"
-  linker_flag: "-Ltools/arm_compiler/linaro_linux_gcc/clang_more_libs"
+  linker_flag: "-Ltools/arm_compiler/linaro_linux_gcc_5_3_1/clang_more_libs"
   linker_flag: "-Lexternal/org_linaro_components_toolchain_gcc_5_3_1/arm-linux-gnueabihf/lib"
   linker_flag: "-Lexternal/org_linaro_components_toolchain_gcc_5_3_1/arm-linux-gnueabihf/libc/lib"
   linker_flag: "-Lexternal/org_linaro_components_toolchain_gcc_5_3_1/arm-linux-gnueabihf/libc/usr/lib"

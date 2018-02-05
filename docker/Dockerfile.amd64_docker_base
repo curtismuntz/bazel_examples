@@ -1,0 +1,4 @@
+FROM debian
+
+COPY install_prereqs.sh /opt/install_prereqs.sh
+RUN bash /opt/install_prereqs.sh
