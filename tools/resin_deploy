@@ -4,8 +4,9 @@ set -e
 usage() {
   echo "Usage: $0 [-t <string>] [-a <string>] [-r <string>]"
   echo "  -t: bazel target (path/to/project:target)"
-  echo "  -a: architecture (must be listed within tools/arm_compiler/CROSSTOOL)"
+  echo "  -a: architecture (must be listed within compilers/arm_compiler/CROSSTOOL)"
   echo "  -r: resin appname (must exist on resin)"
+  echo "  -b: additional build options for bazel (optional)"
   exit 1;
 }
 
@@ -53,7 +54,6 @@ while getopts ":h:a:t:r:b:" opt; do
       ;;
   esac
 done
-shift $((OPTIND -1))
 
 check_prereqs
 
@@ -71,7 +71,7 @@ echo -e "BUILDING $TARGET $BUILD_OPTS for $ARCHITECTURE and deploying to $RESIN_
 
 
 # Build with bazel and load into docker daemon
-bazel run $BUILD_OPTS --crosstool_top=//tools/arm_compiler:toolchain --cpu=$ARCHITECTURE $TARGET
+bazel run $BUILD_OPTS --crosstool_top=//compilers/arm_compiler:toolchain --cpu=$ARCHITECTURE $TARGET
 # bazel run container_image produces strangly named dockerfiles
 DOCKER_IMAGE_NAME="bazel/${TARGET%:*}:${TARGET##*:}"
 # Deploy to resin!

@@ -21,7 +21,7 @@ filegroup(
 filegroup(
     name = "srcs",
     srcs = glob(["**"]) + [
-        "//tools/arm_compiler/linaro_linux_gcc_5_3_1:srcs",
+        "//compilers/arm_compiler/linaro_linux_gcc_5_3_1:srcs",
     ],
     visibility = ["//visibility:private"],
 )
@@ -38,7 +38,7 @@ cc_toolchain_suite(
 filegroup(
     name = "linaro_linux_all_files",
     srcs = [
-        "//tools/arm_compiler/linaro_linux_gcc_5_3_1:tool-wrappers",
+        "//compilers/arm_compiler/linaro_linux_gcc_5_3_1:tool-wrappers",
         "@org_linaro_components_toolchain_gcc_5_3_1//:compiler_pieces",
     ],
 )
@@ -46,9 +46,9 @@ filegroup(
 filegroup(
     name = "linaro_linux_linker_files",
     srcs = [
-        "//tools/arm_compiler/linaro_linux_gcc_5_3_1:ar",
-        "//tools/arm_compiler/linaro_linux_gcc_5_3_1:gcc",
-        "//tools/arm_compiler/linaro_linux_gcc_5_3_1:ld",
+        "//compilers/arm_compiler/linaro_linux_gcc_5_3_1:ar",
+        "//compilers/arm_compiler/linaro_linux_gcc_5_3_1:gcc",
+        "//compilers/arm_compiler/linaro_linux_gcc_5_3_1:ld",
         "@org_linaro_components_toolchain_gcc_5_3_1//:compiler_pieces",
     ],
 )
@@ -56,9 +56,9 @@ filegroup(
 filegroup(
     name = "linaro_linux_compiler_files",
     srcs = [
-        "//tools/arm_compiler/linaro_linux_gcc_5_3_1:as",
-        "//tools/arm_compiler/linaro_linux_gcc_5_3_1:gcc",
-        "//tools/arm_compiler/linaro_linux_gcc_5_3_1:ld",
+        "//compilers/arm_compiler/linaro_linux_gcc_5_3_1:as",
+        "//compilers/arm_compiler/linaro_linux_gcc_5_3_1:gcc",
+        "//compilers/arm_compiler/linaro_linux_gcc_5_3_1:ld",
     ],
 )
 
@@ -75,9 +75,9 @@ cc_toolchain(
     dwp_files = ":empty",
     dynamic_runtime_libs = [":empty"],
     linker_files = ":linaro_linux_linker_files",
-    objcopy_files = "//tools/arm_compiler/linaro_linux_gcc_5_3_1:objcopy",
+    objcopy_files = "//compilers/arm_compiler/linaro_linux_gcc_5_3_1:objcopy",
     static_runtime_libs = [":empty"],
-    strip_files = "//tools/arm_compiler/linaro_linux_gcc_5_3_1:strip",
+    strip_files = "//compilers/arm_compiler/linaro_linux_gcc_5_3_1:strip",
     supports_param_files = 1,
     visibility = ["//visibility:public"],
 )

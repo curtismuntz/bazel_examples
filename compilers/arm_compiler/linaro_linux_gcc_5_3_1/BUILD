@@ -1,4 +1,4 @@
-package(default_visibility = ["//tools/arm_compiler:__pkg__"])
+package(default_visibility = ["//compilers/arm_compiler:__pkg__"])
 
 filegroup(
     name = "srcs",
