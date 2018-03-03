@@ -1,3 +1,7 @@
+build --cxxopt=--std=c++14
+
+# borrowed from https://github.com/korfuri/bazel-travis/blob/master/.bazelrc
+# This is from Bazel's former travis setup, to avoid blowing up the RAM usage.
 startup --host_jvm_args=-Xmx2500m
 startup --host_jvm_args=-Xms2500m
 startup --batch
@@ -5,7 +9,6 @@ test --ram_utilization_factor=10
 
 # This is so we understand failures better
 build --verbose_failures
-build --cxxopt=--std=c++14
 
 # This is so we don't use sandboxed execution. Sandboxed execution
 # runs stuff in a container, and since Travis already runs its script
