@@ -20,7 +20,7 @@ container_image(
     cmd = ["/opt/hello"],
     mode = "777",
     stamp = True,
-    tars = ["//cpp:hello_cpp_tar"],
+    tars = ["//src/cpp:hello_cpp_tar"],
 )
 
 container_image(
@@ -33,5 +33,5 @@ container_image(
     cmd = ["/opt/hello.py"],
     mode = "777",
     stamp = True,
-    tars = ["//py:hello_py_tar"],
+    tars = ["//src/py:hello_py_tar"],
 )

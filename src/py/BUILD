@@ -8,7 +8,7 @@ py_binary(
 
 pkg_tar(
     name = "hello_py_tar",
-    srcs = ["//py:hello"],
+    srcs = [":hello"],
     mode = "0755",
     package_dir = "/opt",
     visibility = ["//visibility:public"],

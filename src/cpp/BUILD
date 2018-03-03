@@ -14,7 +14,7 @@ cc_binary(
 
 pkg_tar(
     name = "hello_cpp_tar",
-    srcs = ["//cpp:hello"],
+    srcs = [":hello"],
     mode = "0755",
     package_dir = "/opt",
     visibility = ["//visibility:public"],

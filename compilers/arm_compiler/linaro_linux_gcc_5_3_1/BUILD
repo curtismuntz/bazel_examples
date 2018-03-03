@@ -3,7 +3,6 @@ package(default_visibility = ["//compilers/arm_compiler:__pkg__"])
 filegroup(
     name = "srcs",
     srcs = glob(["**"]),
-    visibility = ["//visibility:private"],
 )
 
 filegroup(
