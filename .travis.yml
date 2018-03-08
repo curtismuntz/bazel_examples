@@ -1,9 +1,8 @@
 dist: xenial
-
+language: cpp
+os: linux
 addons:
   apt:
-    sources:
-      - ubuntu-toolchain-r-test
     packages:
       - wget
       - pkg-config
