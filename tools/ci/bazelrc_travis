@@ -1,9 +1,8 @@
 startup --batch
 
-build --verbose_failures
 build --cxxopt=--std=c++14
-build --curses=no
+build --curses=no --announce_rc=true --verbose_failures
 build --spawn_strategy=standalone --genrule_strategy=standalone
 
-test --curses=no
+test --curses=no --announce_rc=true
 test --test_strategy=standalone
