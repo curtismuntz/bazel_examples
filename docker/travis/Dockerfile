@@ -9,7 +9,7 @@ MAINTAINER Curtis Muntz <cmuntz@outlook.com>
 RUN apt-get update && apt-get install openjdk-8-jdk curl -y
 RUN echo "deb [arch=amd64] http://storage.googleapis.com/bazel-apt stable jdk1.8" | tee /etc/apt/sources.list.d/bazel.list
 RUN curl https://bazel.build/bazel-release.pub.gpg | apt-key add -
-RUN apt-get update && apt-get install bazel -y
+RUN apt-get update && apt-get install bazel python -y
 
 RUN rm -rf /var/lib/apt/lists/*
 
