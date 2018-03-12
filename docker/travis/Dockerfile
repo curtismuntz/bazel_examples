@@ -13,6 +13,6 @@ RUN apt-get update && apt-get install bazel -y
 
 RUN rm -rf /var/lib/apt/lists/*
 
-RUN mkdir -p /usr/src
-ENV WORKSPACE /usr/src
-WORKDIR /usr/src
+RUN mkdir -p /opt/src
+ENV WORKSPACE /opt/src
+WORKDIR /opt/src
