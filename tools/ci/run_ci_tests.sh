@@ -16,7 +16,7 @@ OPTS="-c opt"
 docker run -it --rm -d \
   --name travis_build \
   -v "$PWD":/usr/src/app \
-  insready/bazel \
+  murtis/bazel \
   /bin/bash
 
 # docker cp ./ travis_build:/usr/src/app/
