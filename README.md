@@ -7,3 +7,4 @@ http://www.murt.is/
 Posts:
 * [RaspberryPi Bazel Crosstool](http://www.murt.is/articles/2018-02/raspberry-pi-bazel-crosstool)
 * [Bazel and Resin](http://www.murt.is/articles/2018-02/bazel-and-resin)
+* [Travis-CI Tooling for Bazel](http://www.murt.is/articles/2018-03/travis-ci-tooling-for-bazel)
