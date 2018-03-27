@@ -19,6 +19,5 @@ docker run -it --rm -d \
   murtis/bazel \
   /bin/bash
 
-# docker cp ./ travis_build:/usr/src/app/
 docker exec travis_build bazel $CONFIG build $OPTS $TARGETS
 docker exec travis_build bazel $CONFIG build $OPTS $TARGETS --crosstool_top=//compilers/arm_compiler:toolchain --cpu=rpi
