@@ -1,0 +1,5 @@
+build --verbose_failures
+#build --announce_rc
+build --local_resources=10000,4,1.0
+build --cxxopt=--std=c++14
+

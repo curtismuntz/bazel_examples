@@ -71,7 +71,7 @@ echo -e "BUILDING $TARGET $BUILD_OPTS for $ARCHITECTURE and deploying to $RESIN_
 
 
 # Build with bazel and load into docker daemon
-bazel run $BUILD_OPTS --crosstool_top=//compilers/arm_compiler:toolchain --cpu=$ARCHITECTURE $TARGET
+bazel run $BUILD_OPTS --crosstool_top=//compilers/arm_compiler:toolchain --spawn_strategy=standalone --cpu=$ARCHITECTURE $TARGET
 # bazel run container_image produces strangly named dockerfiles
 DOCKER_IMAGE_NAME="bazel/${TARGET%:*}:${TARGET##*:}"
 # Deploy to resin!

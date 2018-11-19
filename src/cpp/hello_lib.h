@@ -1,7 +1,8 @@
-#ifndef HELLO_H
-#define HELLO_H
+#pragma once
 #include <string>
+
 namespace hello_lib {
+
 std::string constructString();
+
 }  // hello_lib
-#endif  // HELLO_H

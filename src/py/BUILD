@@ -11,5 +11,7 @@ pkg_tar(
     srcs = [":hello"],
     mode = "0755",
     package_dir = "/opt",
+    # requires bazel 0.15 or newer
+    include_runfiles=True,
     visibility = ["//visibility:public"],
 )
