@@ -3,10 +3,13 @@ FROM ubuntu:16.04
 MAINTAINER Curtis Muntz <cmuntz@outlook.com>
 
 # update ubuntu
-# RUN apt-get update && apt-get upgrade -y --no-install-recommends
+RUN apt-get update && apt-get upgrade -y --no-install-recommends
 
-# install bazelisk
-RUN apt-get update && apt-get install git python -y
+# install compiler stuff
+RUN apt-get update && apt-get install -y \
+  build-essential \
+  git python \
+  python3
 
 # Allows for the use of any bazel version based off a .bazelversion file
 RUN mkdir -p /opt/bazelisk
