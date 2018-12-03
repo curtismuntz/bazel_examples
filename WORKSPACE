@@ -1,13 +1,16 @@
 ###############################
 # Cross compiler
 ###############################
-new_http_archive(
-    name = "org_linaro_components_toolchain_gcc_5_3_1",
-    build_file = "compilers/linaro_linux_gcc_5.3.1.BUILD",
-    sha256 = "987941c9fffdf56ffcbe90e8984673c16648c477b537fcf43add22fa62f161cd",
-    strip_prefix = "gcc-linaro-5.3.1-2016.05-x86_64_arm-linux-gnueabihf",
-    url = "https://bazel-mirror.storage.googleapis.com/releases.linaro.org/components/toolchain/binaries/latest-5/arm-linux-gnueabihf/gcc-linaro-5.3.1-2016.05-x86_64_arm-linux-gnueabihf.tar.xz",
+http_archive(
+    name = "murtis_bazel_compilers",
+    url = "https://gitlab.com/murtis/bazel_compilers/-/archive/v0.0.1/bazel_compilers-v0.0.1.tar.gz",
+    strip_prefix = 'bazel_compilers-v0.0.1',
+    sha256 = "1b254aa94758707032969d00995d2d0fd395fa84cea2eeacdc11903a350b3ad3"
 )
+
+load("@murtis_bazel_compilers//compilers:dependencies.bzl", "linaro_5_3_1_arm_linux_gnueabihf_compiler_dependencies")
+
+linaro_5_3_1_arm_linux_gnueabihf_compiler_dependencies()
 
 ###############################
 # Docker

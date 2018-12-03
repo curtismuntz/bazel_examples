@@ -20,4 +20,4 @@ docker run -it --rm -d \
   /bin/bash
 
 docker exec travis_build bazel $CONFIG build $OPTS $TARGETS
-docker exec travis_build bazel $CONFIG build $OPTS $TARGETS --crosstool_top=//compilers/arm_compiler:toolchain --cpu=rpi
+docker exec travis_build bazel $CONFIG build $OPTS $TARGETS --crosstool_top=@murtis_bazel_compilers//compilers/arm_compiler:toolchain --cpu=rpi
