@@ -9,7 +9,6 @@ trap stop EXIT
 TARGETS="//src/...
          //deploy/...
         "
-CONFIG="--bazelrc=tools/ci/bazelrc_travis"
 
 OPTS="-c opt"
 
@@ -19,5 +18,5 @@ docker run -it --rm -d \
   murtis/bazel \
   /bin/bash
 
-docker exec travis_build bazel $CONFIG build $OPTS $TARGETS
-docker exec travis_build bazel $CONFIG build $OPTS $TARGETS --crosstool_top=@murtis_bazel_compilers//compilers/arm_compiler:toolchain --cpu=rpi
+docker exec travis_build bazel build $OPTS $TARGETS
+docker exec travis_build bazel build --config=rpi $OPTS $TARGETS
