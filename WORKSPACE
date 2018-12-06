@@ -1,6 +1,8 @@
 ###############################
 # Cross compiler
 ###############################
+load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
+
 http_archive(
     name = "murtis_bazel_compilers",
     url = "https://gitlab.com/murtis/bazel_compilers/-/archive/v0.0.1/bazel_compilers-v0.0.1.tar.gz",
