@@ -10,17 +10,18 @@ http_archive(
     sha256 = "7a636457d0af761af5cfefd92d14ce3c48ec580aa5e53c50d7f3a53b748813e2"
 )
 
-load("@murtis_bazel_compilers//compilers:dependencies.bzl", "linaro_5_3_1_arm_linux_gnueabihf_compiler_dependencies")
+load("@murtis_bazel_compilers//compilers:dependencies.bzl", "cross_compiler_dependencies")
 
-linaro_5_3_1_arm_linux_gnueabihf_compiler_dependencies()
+cross_compiler_dependencies()
 
 ###############################
 # Docker
 ###############################
-git_repository(
+http_archive(
     name = "io_bazel_rules_docker",
-    remote = "https://github.com/bazelbuild/rules_docker.git",
-    tag = "v0.3.0",
+    urls = ["https://github.com/bazelbuild/rules_docker/archive/v0.5.1.tar.gz"],
+    sha256 = "29d109605e0d6f9c892584f07275b8c9260803bf0c6fcb7de2623b2bedc910bd",
+    strip_prefix = "rules_docker-0.5.1",
 )
 
 load(
