@@ -5,9 +5,9 @@ load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
 http_archive(
     name = "murtis_bazel_compilers",
-    url = "https://gitlab.com/murtis/bazel_compilers/-/archive/v0.0.1/bazel_compilers-v0.0.1.tar.gz",
-    strip_prefix = 'bazel_compilers-v0.0.1',
-    sha256 = "7a636457d0af761af5cfefd92d14ce3c48ec580aa5e53c50d7f3a53b748813e2"
+    url = "https://gitlab.com/murtis/bazel_compilers/-/archive/v0.1.0/bazel_compilers-v0.1.0.tar.gz",
+    strip_prefix = 'bazel_compilers-v0.1.0',
+    sha256 = "8802d0187bcee2f4f20ca885608fa99fe759962db02845f53eaaa929dc8e3c15"
 )
 
 load("@murtis_bazel_compilers//compilers:dependencies.bzl", "cross_compiler_dependencies")

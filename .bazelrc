@@ -3,8 +3,8 @@ build --verbose_failures
 build --local_resources=10000,4,1.0
 build --cxxopt=--std=c++14
 
-build:rpi --crosstool_top=@murtis_bazel_compilers//compilers/arm_compiler:toolchain
-build:rpi --host_crosstool_top=@bazel_tools//tools/cpp:toolchain
-build:rpi --cpu=armeabi-v7a
-build:rpi --compiler=gcc
-build:rpi --spawn_strategy=standalone
+build:armv7hf --crosstool_top=@murtis_bazel_compilers//compilers/arm_compiler:toolchain
+build:armv7hf --host_crosstool_top=@bazel_tools//tools/cpp:toolchain
+build:armv7hf --cpu=armeabi-v7a
+build:armv7hf --compiler=gcc
+build:armv7hf --spawn_strategy=standalone

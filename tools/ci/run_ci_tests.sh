@@ -19,4 +19,4 @@ docker run -it --rm -d \
   /bin/bash
 
 docker exec travis_build bazel build $OPTS $TARGETS
-docker exec travis_build bazel build --config=rpi $OPTS $TARGETS
+docker exec travis_build bazel build --config=armv7hf $OPTS $TARGETS
