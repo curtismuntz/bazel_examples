@@ -1,6 +1,6 @@
 # Bazel base image
 FROM ubuntu:16.04
-MAINTAINER Curtis Muntz <cmuntz@outlook.com>
+LABEL maintainer="me@murt.is"
 
 # update ubuntu
 RUN apt-get update && apt-get upgrade -y --no-install-recommends
