@@ -1,5 +1,7 @@
 [![Build Status](https://travis-ci.org/curtismuntz/bazel_examples.svg?branch=master)](https://travis-ci.org/curtismuntz/bazel_examples)
 
+Requires bazel version >= 0.23.0
+
 Blog posts about this repo can be found at
 
 http://www.murt.is/
