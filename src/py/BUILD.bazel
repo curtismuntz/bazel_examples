@@ -1,5 +1,5 @@
 load("@pip_requirements//:requirements.bzl", "requirement")
-load("@bazel_tools//tools/build_defs/pkg:pkg.bzl", "pkg_tar", "pkg_deb")
+load("@bazel_tools//tools/build_defs/pkg:pkg.bzl", "pkg_deb", "pkg_tar")
 
 py_binary(
     name = "hello",
@@ -9,9 +9,9 @@ py_binary(
 pkg_tar(
     name = "hello_py_tar",
     srcs = [":hello"],
+    # requires bazel 0.15 or newer
+    include_runfiles = True,
     mode = "0755",
     package_dir = "/opt",
-    # requires bazel 0.15 or newer
-    include_runfiles=True,
     visibility = ["//visibility:public"],
 )

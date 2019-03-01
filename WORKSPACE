@@ -12,6 +12,7 @@ http_archive(
 
 load("@murtis_bazel_tools//tools:github_repo.bzl", "github_repo")
 load("@murtis_bazel_tools//tools:deps.bzl", "linter_dependencies")
+
 linter_dependencies()
 
 github_repo(
@@ -72,7 +73,7 @@ http_archive(
     urls = ["https://github.com/bazelbuild/rules_python/archive/88532b624f74ab17138fb638d3c62750b5af5f9a.tar.gz"],
 )
 
-load("@io_bazel_rules_python//python:pip.bzl", "pip_repositories", "pip_import")
+load("@io_bazel_rules_python//python:pip.bzl", "pip_import", "pip_repositories")
 
 pip_repositories()
 
