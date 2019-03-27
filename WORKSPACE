@@ -5,9 +5,9 @@ load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 ###############################
 http_archive(
     name = "murtis_bazel_tools",
-    sha256 = "a6bcb86c7b5ed4c55fddd4b64d9c4916677e758f0fdd7f051f9dbfca8a6a8eee",
-    strip_prefix = "bazel_tools-811127f89abd954e3ed4a89e9aa90b468c71c2d4",
-    urls = ["https://github.com/curtismuntz/bazel_tools/archive/811127f89abd954e3ed4a89e9aa90b468c71c2d4.tar.gz"],
+    sha256 = "0cf31343cf6e1245600ceba4b6bd6059551383a5be7248d15ff835dcf6c2e0b0",
+    strip_prefix = "bazel_tools-11b35d5fc0d52f1b29de316563994f46c34b7998",
+    urls = ["https://github.com/curtismuntz/bazel_tools/archive/11b35d5fc0d52f1b29de316563994f46c34b7998.tar.gz"],
 )
 
 load("@murtis_bazel_tools//tools:github_repo.bzl", "github_repo")
@@ -18,8 +18,8 @@ linter_dependencies()
 github_repo(
     name = "murtis_bazel_compilers",
     repo = "bazel_compilers",
-    sha256 = "6d0f5efaa3ac073906ef3351da4038bfd081296d6307e0e87c33ffc2cc876a4f",
-    tag = "eaafbe4ee813b2d1363e8022eee2218ac3e2da06",
+    sha256 = "4d45dbbeba3885280e595bc533b62e5d81162057b0318fc16787dcea025b9dcf",
+    tag = "3483b5c0f9f64b4342426af4360af710eaabd755",
     user = "curtismuntz",
 )
 
