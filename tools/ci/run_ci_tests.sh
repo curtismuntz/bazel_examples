@@ -15,7 +15,7 @@ OPTS="-c opt"
 docker run -it --rm -d \
   --name travis_build \
   -v "$PWD":/opt/src \
-  murtis/bazel \
+  murtis/bazelisk_container \
   /bin/bash
 
 docker exec travis_build bazel build $OPTS $TARGETS
