@@ -10,3 +10,7 @@ Posts:
 * [RaspberryPi Bazel Crosstool](http://www.murt.is/articles/2018-02/raspberry-pi-bazel-crosstool)
 * [Bazel and Resin](http://www.murt.is/articles/2018-02/bazel-and-resin)
 * [Travis-CI Tooling for Bazel](http://www.murt.is/articles/2018-03/travis-ci-tooling-for-bazel)
+
+Some more fully featured example bazel projects that I've worked on:
+* [witness: an API callable webcam project](https://murt.is/articles/2019-03/witness.html)
+
