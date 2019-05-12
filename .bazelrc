@@ -8,3 +8,8 @@ build:armv7hf --host_crosstool_top=@bazel_tools//tools/cpp:toolchain
 build:armv7hf --cpu=armeabi-v7a
 build:armv7hf --compiler=gcc
 build:armv7hf --spawn_strategy=standalone
+
+build:aarch64 --crosstool_top=@murtis_bazel_compilers//compilers/arm_compiler:toolchain
+build:aarch64 --host_crosstool_top=@bazel_tools//tools/cpp:toolchain
+build:aarch64 --cpu=aarch64-linux-gnu --compiler=gcc
+build:aarch64 --spawn_strategy=standalone

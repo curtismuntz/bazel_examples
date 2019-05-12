@@ -2,18 +2,18 @@ load("@io_bazel_rules_docker//container:container.bzl", "container_image")
 
 config_setting(
     name = "rpi",
-    values = {"cpu": "rpi"},
+    values = {"cpu": "armeabi-v7a"},
 )
 
 config_setting(
-    name = "tx2",
-    values = {"cpu": "tx2"},
+    name = "jetson",
+    values = {"cpu": "aarch64-linux-gnu"},
 )
 
 container_image(
     name = "hello_cpp_image",
     base = select({
-        ":tx2": "@tx2_docker_base//image",
+        ":jetson": "@jetson_docker_base//image",
         ":rpi": "@rpi_docker_base//image",
         "//conditions:default": "@amd64_docker_base//image",
     }),
@@ -26,7 +26,7 @@ container_image(
 container_image(
     name = "hello_py_image",
     base = select({
-        ":tx2": "@tx2_docker_base//image",
+        ":jetson": "@jetson_docker_base//image",
         ":rpi": "@rpi_docker_base//image",
         "//conditions:default": "@amd64_docker_base//image",
     }),

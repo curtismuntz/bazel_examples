@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/curtismuntz/bazel_examples.svg?branch=master)](https://travis-ci.org/curtismuntz/bazel_examples)
 
-Requires bazel version >= 0.23.0
+Requires bazel version >= 0.25.0
 
 Blog posts about this repo can be found at
 
@@ -13,4 +13,3 @@ Posts:
 
 Some more fully featured example bazel projects that I've worked on:
 * [witness: an API callable webcam project](https://murt.is/articles/2019-03/witness.html)
-

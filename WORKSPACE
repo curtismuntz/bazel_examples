@@ -5,9 +5,9 @@ load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 ###############################
 http_archive(
     name = "murtis_bazel_tools",
-    sha256 = "0cf31343cf6e1245600ceba4b6bd6059551383a5be7248d15ff835dcf6c2e0b0",
-    strip_prefix = "bazel_tools-11b35d5fc0d52f1b29de316563994f46c34b7998",
-    urls = ["https://github.com/curtismuntz/bazel_tools/archive/11b35d5fc0d52f1b29de316563994f46c34b7998.tar.gz"],
+    sha256 = "099798213986aa96d7dc1bdc6f7b0841eeefe5408f6ede85f5530638a9aff1bf",
+    strip_prefix = "bazel_tools-47f50405eb76f8320dc16c11509595254af98a4d",
+    urls = ["https://github.com/curtismuntz/bazel_tools/archive/47f50405eb76f8320dc16c11509595254af98a4d.tar.gz"],
 )
 
 load("@murtis_bazel_tools//tools:github_repo.bzl", "github_repo")
@@ -18,8 +18,8 @@ linter_dependencies()
 github_repo(
     name = "murtis_bazel_compilers",
     repo = "bazel_compilers",
-    sha256 = "4d45dbbeba3885280e595bc533b62e5d81162057b0318fc16787dcea025b9dcf",
-    tag = "3483b5c0f9f64b4342426af4360af710eaabd755",
+    sha256 = "0006cf0d09b488d172ad46806ebcd25f39957069d1fcb4536ea3c79c08d67192",
+    tag = "4eceef3d494411b2959d33374618c40c9720d9a9",
     user = "curtismuntz",
 )
 
@@ -60,6 +60,13 @@ container_pull(
     name = "amd64_docker_base",
     registry = "index.docker.io",
     repository = "murtis/amd64_docker_base",
+    tag = "latest",
+)
+
+container_pull(
+    name = "jetson_docker_base",
+    registry = "index.docker.io",
+    repository = "murtis/aarch64_docker_base",
     tag = "latest",
 )
 
